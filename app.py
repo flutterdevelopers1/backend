@@ -69,4 +69,4 @@ def forgetpass():
         return 'EMAIL NOT FOUND!'
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
