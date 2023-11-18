@@ -10,11 +10,11 @@ otp = 0
 email_address = "ghostdetectorteam@gmail.com"
 email_password = "kamalkrisna"
 
-@app.route('/', methods = ['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST'])
 def home():
     return 'Hello World'
 
-@app.route("/otp", methods = ['GET', 'POST'])
+@app.route("/otp", methods=['GET', 'POST'])
 def otp():
     global otp
 
@@ -34,7 +34,7 @@ def otp():
     return 'OTP'
     
 
-@app.route('/signin', methods = ['GET', 'POST'])
+@app.route('/signin', methods=['GET', 'POST'])
 def signin():
     status, username = db.check_user()
     
@@ -45,13 +45,13 @@ def signin():
     
     return json.dumps(data)
 
-@app.route('/register', method = ['GET', 'POST'])
+@app.route('/register', methods=['GET', 'POST'])
 def register():
     status = db.insert_data()
     return json.dumps(status)
 
 
-@app.route('/forgetpassword', methods = ['GET', 'POST'])
+@app.route('/forgetpassword', methods=['GET', 'POST'])
 def forgetpass():
     username = db.check_user()
 
